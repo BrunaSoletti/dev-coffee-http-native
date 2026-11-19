@@ -153,5 +153,5 @@ const server = http.createServer((req, res) => {
 const PORT = 3000;
 server.listen(PORT, () => {
     console.log(`Servidor Dev Coffee rodando na porta ${PORT}`);
-    console.log('Acesse: http://localhost:${PORT}/orders');
+    console.log(`Acesse: http://localhost:${PORT}/orders´);
 });
