@@ -15,3 +15,27 @@ Para iniciar o servidor na porta `3000`:
 
 ```bash
 npm start
+
+## Endpoints
+
+### 1. GET /orders
+Retorna todos os pedidos. Aceita filtro opcional por status via query string.
+```bash
+# Listar todos
+curl http://localhost:3000/orders
+
+# Filtrar por status
+curl http://localhost:3000/orders?status=pendente
+
+curl http://localhost:3000/orders/1
+
+curl -X POST http://localhost:3000/orders \
+  -H "Content-Type: application/json" \
+  -d '{"client": "Bruna", "item": "Café com Leite"}'
+
+curl -X PATCH http://localhost:3000/orders/1/status \
+  -H "Content-Type: application/json" \
+  -d '{"status": "pronto"}'
+
+curl -X DELETE http://localhost:3000/orders/1
+
